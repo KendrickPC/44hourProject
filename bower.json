@@ -1,0 +1,22 @@
+{
+  "name": "learningEveryDay",
+  "homepage": "https://github.com/KendrickPC/learningEveryDay",
+  "authors": [
+    "KendrickPC <kennethpchang@gmail.com>"
+  ],
+  "description": "Bower init",
+  "main": "Chart.js",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Chart.js": "^2.0.2"
+  }
+}

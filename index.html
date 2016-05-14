@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <!-- Tells the browser what the title of this page should be. -->
+  <title>21stCenturyMcFly</title>
+
+  <!-- Load the page styles. -->
+<!-- Considering loading a SASS script -->
+<!-- bootstrap link href with minified file of CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+
+
+  <!-- chartsjs.org documentation -->
+  <!-- Chart.js needs to be updated in the JS folder of the framework -->
+<!--   // <script src="js/Chart.js"></script> -->
+  <script src="js/jQuery.js"></script>
+  <script src="js/helper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  
+
+<!-- Google Maps API Script -->
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
+
+  
+</head>
+<body unresolved>
+  <div id="main">
+
+    <!--
+    Everything from here to the <script> tag below is the skeleton of my
+    resume.
+    -->
+    <div id="header" class="center-content clearfix">
+      <ul id="topContacts" class='flex-box'></ul>
+    </div>
+    <div style='clear: both;'></div>
+    <div id="workExperience" class='gray'>
+      <h2>Work Experience</h2>
+    </div>
+    <div id="projects">
+      <h2>Projects</h2>
+    </div>
+    <div id="education" class='gray'>
+      <h2>Education</h2>
+    </div>
+    <div id="mapDiv">
+      <h2>Where I've Lived and Worked</h2>
+    </div>
+    <div id="letsConnect" class='dark-gray'>
+      <h2 class='orange center-text'>Let's Connect</h2>
+        <ul id="footerContacts" class="flex-box">
+      </ul>
+    </div>
+  </div>
+
+  <!--
+  My futile attempt at writing code and building the resume dynamically with Javascript. Check the resumeBuilder.js file for my resume. Thanks for stopping by. 
+  -->
+  <script src="js/resumeBuilder.js"></script>
+
+
+  <script type="text/javascript">
+
+    if(document.getElementsByClassName('flex-item').length === 0) {
+      document.getElementById('topContacts').style.display = 'none';
+    }
+    if(document.getElementsByTagName('h1').length === 0) {
+      document.getElementById('header').style.display = 'none';
+    }
+    if(document.getElementsByClassName('work-entry').length === 0) {
+      document.getElementById('workExperience').style.display = 'none';
+    }
+    if(document.getElementsByClassName('project-entry').length === 0) {
+      document.getElementById('projects').style.display = 'none';
+    }
+    if(document.getElementsByClassName('education-entry').length === 0) {
+      document.getElementById('education').style.display = 'none';
+    }
+    if(document.getElementsByClassName('flex-item').length === 0) {
+      document.getElementById('letsConnect').style.display = 'none';
+    }
+    if(document.getElementById('map') === null) {
+      document.getElementById('mapDiv').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
