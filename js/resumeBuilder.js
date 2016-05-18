@@ -14,6 +14,7 @@ var bio = {
         " skateboarding", " electric guitar", " sleep ", " saving the universe"
     ],
     "bioPic": "images/fry.jpg"
+    // "display": "function" 
 };
 
 
