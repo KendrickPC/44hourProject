@@ -1,3 +1,5 @@
+// The contents in this file will build the resume dynamically when index.html is opened
+
 // biography section
 var bio = {
     "name" : "Marty McFly",
@@ -9,65 +11,108 @@ var bio = {
         "twitter": "@McFly",
         "location": "Hollywood, California"
     },
-    "welcomeMessage": "Just trying to go home.",
+    "welcomeMsg": "Just trying to go home.",
     "skills": [
         " skateboarding", " electric guitar", " sleep ", " saving the universe"
     ],
     "bioPic": "images/fry.jpg"
-    // "display": "function" 
 };
 
+/* ---------- HEADER & FOOTER ---------- */
 
-// bio variable
-var name = bio.name;
-var role = bio.role;
-var bioPic = bio.bioPic;
-var welcomeMessage = bio.welcomeMessage;
+bio.display = function() {
 
-// special skills variable
-var skills = bio.skills;
+  var formattedName = HTMLheaderName.replace("%data%",bio.name);  // JS's .replace(old, new) swaps out placeholder (e.g. %data%) for data from JSONs
+  var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
+  var formattedImage = HTMLbioPic.replace("%data%",bio.bioPic);
+  var formattedMsg = HTMLWelcomeMsg.replace("%data%",bio.WelcomeMsg);
 
-// top contacts variable
-var mobile = bio.contacts.mobile;
-var email = bio.contacts.email;
-var github = bio.contacts.github;
-var twitter = bio.contacts.twitter;
-var _location = bio.contacts.location;
+  $("#header").prepend(formattedName,formattedRole).append(formattedImage,formattedMsg);  // jQuery’s .append() & .prepend() fns modifies index.html
 
-// bio variable
-var formattedName = HTMLheaderName.replace("%data%", name);
-var formattedRole = HTMLheaderRole.replace("%data%", role);
-var formattedBioPic = HTMLbioPic.replace("%data%", bioPic);
-var formattedWelcomeMessage = HTMLWelcomeMsg.replace("%data%", welcomeMessage);
+  var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+  $("#topContacts").append(formattedMobile);
+  var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+  $("#topContacts").append(formattedEmail);
+  var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+  $("#topContacts").append(formattedGithub);
+  var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+  $("#topContacts").append(formattedTwitter);
+  var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+  $("#topContacts").append(formattedLocation);
 
-// special skills variable
-var formattedSkills = HTMLskills.replace("%data%", skills);
+  $("#footerContacts").append(formattedMobile);
+  $("#footerContacts").append(formattedEmail);
+  $("#footerContacts").append(formattedGithub);
+  $("#footerContacts").append(formattedTwitter);
+  $("#footerContacts").append(formattedLocation);
 
-// top contacts variable
-var formattedMobile = HTMLmobile.replace("%data%", mobile);
-var formattedEmail = HTMLemail.replace("%data%", email);
-var formattedGithub = HTMLgithub.replace("%data%", github);
-var formattedTwitter = HTMLtwitter.replace("%data%", twitter);
-var formattedLocation = HTMLlocation.replace("%data%", _location);
+  if(bio.skills.length > 0) {                       // CONVERTED INTO LOOP FOR FLEXIBLE ADDITION OF SKILLS
 
-// bio variable
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-$("#header").append(formattedBioPic);
-$("#header").append(formattedWelcomeMessage);
+    $("#header").append(HTMLskillsStart);
 
-// special skills variable
-$("#header").append(HTMLskillsStart);
-$("#skills").append(formattedSkills);
+    for(var i = 0; i < bio.skills.length; i++) {
+      formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
+      $("#skills").append(formattedSkill);
+    }
+  }
+};
 
-// top contacts variable
-$("#topContacts").append(formattedMobile);
-$("#topContacts").append(formattedEmail);
-$("#topContacts").append(formattedGithub);
-$("#topContacts").append(formattedTwitter);
-$("#topContacts").append(formattedLocation);
+bio.display();
+
+
+
+// // bio variable
+// var name = bio.name;
+// var role = bio.role;
+// var bioPic = bio.bioPic;
+// var welcomeMessage = bio.welcomeMessage;
+
+// // special skills variable
+// var skills = bio.skills;
+
+// // top contacts variable
+// var mobile = bio.contacts.mobile;
+// var email = bio.contacts.email;
+// var github = bio.contacts.github;
+// var twitter = bio.contacts.twitter;
+// var _location = bio.contacts.location;
+
+// // bio variable
+// var formattedName = HTMLheaderName.replace("%data%", name);
+// var formattedRole = HTMLheaderRole.replace("%data%", role);
+// var formattedBioPic = HTMLbioPic.replace("%data%", bioPic);
+// var formattedWelcomeMessage = HTMLWelcomeMsg.replace("%data%", welcomeMessage);
+
+// // special skills variable
+// var formattedSkills = HTMLskills.replace("%data%", skills);
+
+// // top contacts variable
+// var formattedMobile = HTMLmobile.replace("%data%", mobile);
+// var formattedEmail = HTMLemail.replace("%data%", email);
+// var formattedGithub = HTMLgithub.replace("%data%", github);
+// var formattedTwitter = HTMLtwitter.replace("%data%", twitter);
+// var formattedLocation = HTMLlocation.replace("%data%", _location);
+
+// // bio variable
+// $("#header").prepend(formattedRole);
+// $("#header").prepend(formattedName);
+// $("#header").append(formattedBioPic);
+// $("#header").append(formattedWelcomeMessage);
+
+// // special skills variable
+// $("#header").append(HTMLskillsStart);
+// $("#skills").append(formattedSkills);
+
+// // top contacts variable
+// $("#topContacts").append(formattedMobile);
+// $("#topContacts").append(formattedEmail);
+// $("#topContacts").append(formattedGithub);
+// $("#topContacts").append(formattedTwitter);
+// $("#topContacts").append(formattedLocation);
 
 // Fifty lines of code rewritten
+// appends bio section to the page
+
 
 
 // jediMasterTrainer training specialties
@@ -266,6 +311,7 @@ projects.display = function () {
 
 // encapsulation: Holding the display function inside the property's object. 
 projects.display();
+// bio.display();
 
 
 
