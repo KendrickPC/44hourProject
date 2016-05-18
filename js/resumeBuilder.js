@@ -11,9 +11,9 @@ var bio = {
         "twitter": "@McFly",
         "location": "Hollywood, California"
     },
-    "welcomeMsg": "Just trying to go home.",
+    "WelcomeMsg": "Just trying to go home.",
     "skills": [
-        " skateboarding", " electric guitar", " sleep ", " saving the universe"
+        " teaching piano", " teaching guitar", " sleeping", " rescuing kids from burning houses", " drinking coffee", " collecting sneakers", " playing basketball", 
     ],
     "bioPic": "images/fry.jpg"
 };
@@ -57,7 +57,7 @@ bio.display = function() {
   }
 };
 
-bio.display();
+
 
 
 
@@ -161,7 +161,7 @@ work.display = function() {
 };
 
 // displays work information
-work.display();
+
 
 
 
@@ -248,7 +248,7 @@ education.display = function () {
     }
 };
 
-education.display();
+
 
 
 
@@ -311,8 +311,9 @@ projects.display = function () {
 
 // encapsulation: Holding the display function inside the property's object. 
 projects.display();
-// bio.display();
-
+bio.display();
+education.display();
+work.display();
 
 
 
