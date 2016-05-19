@@ -1,21 +1,25 @@
+// 'use strict';
+// consider fixing use strict issue later
+
 // The contents in this file will build the resume dynamically when index.html is opened
 
 // biography section
 var bio = {
-    "name" : "Marty McFly",
-    "role": "Time Traveler",
-    "contacts": {
-        "mobile": "555-555-5555",
-        "email": "McFly@netscape.com",
-        "github": "McFly",
-        "twitter": "@McFly",
-        "location": "Hollywood, California"
+    'name' : 'Marty McFly',
+    'role': 'Time Traveler',
+    'contacts': {
+        'mobile': '555-555-5555',
+        'email': 'McFly@netscape.com',
+        'github': 'McFly',
+        'twitter': '@McFly',
+        'location': 'Taipei, Taiwan'
     },
-    "WelcomeMsg": "Just trying to go home.",
-    "skills": [
-        " teaching piano", " teaching guitar", " sleeping", " rescuing kids from burning houses", " drinking coffee", " collecting sneakers", " playing basketball", 
+    'WelcomeMsg': 'Just trying to go back to the future.',
+    'skills': [
+        ' teaching piano', ' teaching guitar', ' sleeping', ' rescuing kids from burning houses'
+        , ' drinking coffee', ' collecting sneakers', ' playing basketball', 
     ],
-    "bioPic": "images/fry.jpg"
+    'biopic': 'images/fry.jpg'
 };
 
 /* ---------- HEADER & FOOTER ---------- */
@@ -24,7 +28,7 @@ bio.display = function() {
 
   var formattedName = HTMLheaderName.replace("%data%",bio.name);  // JS's .replace(old, new) swaps out placeholder (e.g. %data%) for data from JSONs
   var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
-  var formattedImage = HTMLbioPic.replace("%data%",bio.bioPic);
+  var formattedImage = HTMLbiopic.replace("%data%",bio.biopic);
   var formattedMsg = HTMLWelcomeMsg.replace("%data%",bio.WelcomeMsg);
 
   $("#header").prepend(formattedName,formattedRole).append(formattedImage,formattedMsg);  // jQuery’s .append() & .prepend() fns modifies index.html
@@ -57,88 +61,30 @@ bio.display = function() {
   }
 };
 
-
-
-
-
-// // bio variable
-// var name = bio.name;
-// var role = bio.role;
-// var bioPic = bio.bioPic;
-// var welcomeMessage = bio.welcomeMessage;
-
-// // special skills variable
-// var skills = bio.skills;
-
-// // top contacts variable
-// var mobile = bio.contacts.mobile;
-// var email = bio.contacts.email;
-// var github = bio.contacts.github;
-// var twitter = bio.contacts.twitter;
-// var _location = bio.contacts.location;
-
-// // bio variable
-// var formattedName = HTMLheaderName.replace("%data%", name);
-// var formattedRole = HTMLheaderRole.replace("%data%", role);
-// var formattedBioPic = HTMLbioPic.replace("%data%", bioPic);
-// var formattedWelcomeMessage = HTMLWelcomeMsg.replace("%data%", welcomeMessage);
-
-// // special skills variable
-// var formattedSkills = HTMLskills.replace("%data%", skills);
-
-// // top contacts variable
-// var formattedMobile = HTMLmobile.replace("%data%", mobile);
-// var formattedEmail = HTMLemail.replace("%data%", email);
-// var formattedGithub = HTMLgithub.replace("%data%", github);
-// var formattedTwitter = HTMLtwitter.replace("%data%", twitter);
-// var formattedLocation = HTMLlocation.replace("%data%", _location);
-
-// // bio variable
-// $("#header").prepend(formattedRole);
-// $("#header").prepend(formattedName);
-// $("#header").append(formattedBioPic);
-// $("#header").append(formattedWelcomeMessage);
-
-// // special skills variable
-// $("#header").append(HTMLskillsStart);
-// $("#skills").append(formattedSkills);
-
-// // top contacts variable
-// $("#topContacts").append(formattedMobile);
-// $("#topContacts").append(formattedEmail);
-// $("#topContacts").append(formattedGithub);
-// $("#topContacts").append(formattedTwitter);
-// $("#topContacts").append(formattedLocation);
-
-// Fifty lines of code rewritten
-// appends bio section to the page
-
-
-
 // jediMasterTrainer training specialties
 
 var work = {
-    "jobs": [
+    'jobs': [
         {
-            "employer": "Biff Owns Me",
-            "title": "Full Stack Web Developer",
-            "location": "Taipei, Taiwan",
-            "dates": "April 2014 - present",
-            "description": "Keep calm and code."
+            'employer': 'Biff Owns Me',
+            'title': 'Full Stack Web Developer',
+            'location': 'Taipei, Taiwan',
+            'dates': 'April 2014 - present',
+            'description': 'Keep calm and code.'
         },
         {
-            "employer": "Private Financial Consulting Firm",
-            "title": "Junior Analyst",
-            "location": "Menlo Park, CA",
-            "dates": "June 2010 - April 2013",
-            "description": "Keep calm, read, analyze, and summarize."
+            'employer': 'Private Financial Consulting Firm',
+            'title': 'Junior Analyst',
+            'location': 'Menlo Park, CA',
+            'dates': 'June 2010 - April 2013',
+            'description': 'Keep calm, read, analyze, and summarize.'
         },
         {
-            "employer": "MSGR",
-            "title": "Legal Researcher",
-            "location": "Palo Alto, CA",
-            "dates": "June 2008 - April 2010",
-            "description": "Keep calm, read, analyze, and summarize."
+            'employer': 'MSGR',
+            'title': 'Legal Researcher',
+            'location': 'Palo Alto, CA',
+            'dates': 'June 2008 - April 2010',
+            'description': 'Keep calm, read, analyze, and summarize.'
         }
     ]
 };
@@ -168,36 +114,36 @@ work.display = function() {
 
 // education information
 var education = {
-    "schools": [
+    'schools': [
         {
-            "name": "University of California Berkeley Extension",
-            "location": "San Francisco, CA",
-            "degree": "Certification",
-            "dates": "2007-2008",
-            "major": ["Copyediting"],
-            "url": "http://www.http://extension.berkeley.edu/"
+            'name': 'University of California Berkeley Extension',
+            'location': 'San Francisco, CA',
+            'degree': 'Certification',
+            'dates': '2007-2008',
+            'major': ['Copyediting'],
+            'url': 'http://www.http://extension.berkeley.edu/'
         },
         {
-            "name": "University of California Santa Barbara",
-            "location": "Santa Barbara, California",
-            "degree": "BA",
-            "dates": "2004-2007",
-            "major": ["Political Science"],
-            "url": "http://www.ucsb.edu"
+            'name': 'University of California Santa Barbara',
+            'location': 'Santa Barbara, California',
+            'degree': 'BA',
+            'dates': '2004-2007',
+            'major': ['Political Science'],
+            'url': 'http://www.ucsb.edu'
         }
     ],
-    "onlineCourses": [
+    'onlineCourses': [
         {
-            "title": "Front-End Web Developer Nanodegree",
-            "school": "Udacity",
-            "dates": "January 2016",
-            "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
+            'title': 'Front-End Web Developer Nanodegree',
+            'school': 'Udacity',
+            'dates': 'January 2016',
+            'url': 'https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001'
         },
         {
-            "title": "Senior Web Developer",
-            "school": "Udacity",
-            "dates": "August 1985",
-            "url": "https://www.udacity.com/course/senior-web-developer-nanodegree--nd802"
+            'title': 'Senior Web Developer',
+            'school': 'Udacity',
+            'dates': 'August 1985',
+            'url': 'https://www.udacity.com/course/senior-web-developer-nanodegree--nd802'
         }
     ]
 };
@@ -258,30 +204,30 @@ education.display = function () {
 // projects section
 
 var projects = {
-    "project": [
+    'project': [
         {
-            "title": "Neighborhood Map",
-            "dates": "February 2016 - present",
-            "description": "Neighborhood map project",
-            "images": ["images/icon.jpg"]
+            'title': 'Neighborhood Map',
+            'dates': 'February 2016 - present',
+            'description': 'Neighborhood map project',
+            'images': ['images/icon.jpg']
         },
         {
-            "title": "Arcade Game",
-            "dates": "January 2016 - present",
-            "description": "Arcade game project",
-            "images": ["images/icon.jpg"]
+            'title': 'Arcade Game',
+            'dates': 'January 2016 - present',
+            'description': 'Arcade game project',
+            'images': ['images/icon.jpg']
         },
         {
-            "title": "FIFA Matches",
-            "dates": "January 2016 - present",
-            "description": "Analyzes FIFA Matches",
-            "images": ["images/icon.jpg"]
+            'title': 'FIFA Matches',
+            'dates': 'January 2016 - present',
+            'description': 'Analyzes FIFA Matches',
+            'images': ['images/icon.jpg']
         },
         {
-            "title": "Health Tracker",
-            "dates": "March 2016 - present", 
-            "description": "A Fitness Tracker",
-            "images": ["images/icon.jpg"]
+            'title': 'Health Tracker',
+            'dates': 'March 2016 - present', 
+            'description': 'A Fitness Tracker',
+            'images': ['images/icon.jpg']
         }
     ]
 };
@@ -310,12 +256,10 @@ projects.display = function () {
 };
 
 // encapsulation: Holding the display function inside the property's object. 
-projects.display();
 bio.display();
-education.display();
 work.display();
-
-
+education.display();
+projects.display();
 
 
 // internationalize name buttion/function located at the bottom of the page. 
