@@ -1,6 +1,3 @@
-// 'use strict';
-// consider fixing use strict issue later
-
 // The contents in this file will build the resume dynamically when index.html is opened
 
 // biography section
@@ -16,15 +13,16 @@ var bio = {
     },
     'WelcomeMsg': 'Just trying to go back to the future.',
     'skills': [
-        ' teaching piano', ' teaching guitar', ' sleeping', ' rescuing kids from burning houses'
-        , ' drinking coffee', ' collecting sneakers', ' playing basketball', 
-    ],
+        ' teaching piano', ' teaching guitar', ' sleeping', ' rescuing kids from burning houses', ' drinking coffee', ' collecting sneakers', ' playing basketball' 
+            ],
     'biopic': 'images/fry.jpg'
 };
 
 /* ---------- HEADER & FOOTER ---------- */
 
 bio.display = function() {
+
+
 
   var formattedName = HTMLheaderName.replace("%data%",bio.name);  // JS's .replace(old, new) swaps out placeholder (e.g. %data%) for data from JSONs
   var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
@@ -169,7 +167,7 @@ education.display = function () {
         $(".education-entry:last").append(formattedDates);
         $(".education-entry:last").append(formattedLocation);
 
-        for (concentration in majors) {
+        for (var concentration in majors) {
             var formattedMajor = HTMLschoolMajor.replace("%data%", majors[concentration]);
             $(".education-entry:last").append(formattedMajor);
         }
@@ -248,7 +246,7 @@ projects.display = function () {
         $(".project-entry:last").append(formattedDates);
         $(".project-entry:last").append(formattedDescription);
         // append project images
-        for (Chicago in projects.project[projectsForSneakers].images) {
+        for (var Chicago in projects.project[projectsForSneakers].images) {
             var image1 = HTMLprojectImage.replace("%data%", projects.project[projectsForSneakers].images[Chicago]);
             $(".project-entry:last").append(image1);
         }
